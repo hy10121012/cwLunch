@@ -1,0 +1,79 @@
+<nav class="row">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <p class="navbar-text">欢迎来到订餐管理界面</p>
+        <p class="navbar-text">下次送餐时间: 21st April 2015 12:30AM <a class="navbar-link" id="datetimepicker" href="#"><label  style="cursor: pointer;" >修改</label></a></p>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">今日午餐订单</a></li>
+          <li><a href="#">今日晚餐订餐</a></li>
+          <li><a href="#">历史订餐</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</nav>
+
+
+<div class="row">
+  <div class="panel panel-default">
+    <div class="panel-heading">J.P Morgan</div>
+
+    <div class="list-group">
+        <a href="#" class="list-group-item">红烧豆腐<span class="badge">14</span></a>
+        <a href="#" class="list-group-item">烧鸭饭<span class="badge">6</span></a>
+        <a href="#" class="list-group-item">烧鸭饭（无饭）<span class="badge">1</span></a>
+        <a href="#" class="list-group-item">农家小炒<span class="badge">5</span></a>
+        <a href="#" class="list-group-item">粉丝肥牛<span class="badge">1</span></a>
+        <a href="#" class="list-group-item">酸豆角鸡杂<span class="badge">2</span></a>
+        <a href="#" class="list-group-item">酸豆角鸡杂(无饭)<span class="badge">2</span></a>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">DLR Station</div>
+
+    <ul class="list-group">
+        <a href="#" class="list-group-item">红烧豆腐<span class="badge">14</span></a>
+        <a href="#" class="list-group-item">烧鸭饭<span class="badge">6</span></a>
+        <a href="#" class="list-group-item">烧鸭饭（无饭）<span class="badge">1</span></a>
+        <a href="#" class="list-group-item">农家小炒<span class="badge">5</span></a>
+        <a href="#" class="list-group-item">粉丝肥牛<span class="badge">1</span></a>
+        <a href="#" class="list-group-item">酸豆角鸡杂<span class="badge">2</span></a>
+        <a href="#" class="list-group-item">酸豆角鸡杂(无饭)<span class="badge">2</span></a>
+      </ul>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">SC 10</div>
+
+    <ul class="list-group">
+        <a href="#" class="list-group-item">红烧豆腐<span class="badge">1</span></a>
+        <a href="#" class="list-group-item">烧鸭饭（无饭）<span class="badge">1</span></a>
+        <a href="#" class="list-group-item">农家小炒<span class="badge">8</span></a>
+        <a href="#" class="list-group-item">粉丝肥牛<span class="badge">3</span></a>
+        <a href="#" class="list-group-item">酸豆角鸡杂<span class="badge">8</span></a>
+        <a href="#" class="list-group-item">酸豆角鸡杂(无饭)<span class="badge">1</span></a>
+      </ul>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker').datetimepicker({
+            format: 'LT'
+        });
+    });
+</script>

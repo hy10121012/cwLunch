@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-offset-3 col-md-5 login-title" style=""><h1>欢迎来到何餐管理系统</h1></div>
+  <div class="col-md-offset-3 col-md-5 login-form">
+    <%= form_tag("/login", method: "post") do %>
+      <div class="row login-form-row ">
+        <div class="login-form-lab col-md-4"><label>用户名</label></div>
+        <div class="user-name-input col-md-8 "><input class="form-control" type="text" placeholder="请输入用户名"/></div>
+      </div>
+      <div class="row login-form-row">
+        <div class="login-form-lab col-md-4"><label>密码</label></div>
+        <div class="user-name-lab col-md-8"><input class="form-control"  placeholder="请输入密码" type="text"/></div>
+      </div>
+      <div class="row login-form-row" style="border-bottom: 0px;">
+        <div class="user-name-lab col-md-4"></div>
+        <div class="user-name-lab col-md-8"><input type="submit"  class="btn btn-primary"></div>
+      </div>
+    <%end%>
+
+  </div>
+
+
+</div>

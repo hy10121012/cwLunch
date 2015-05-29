@@ -1,0 +1,7 @@
+<ul class="nav nav-pills  nav-stacked">
+  <li role="presentation" <% if params[:controller]=="order" %>class="active"<%end%>><a href="/order">订单管理</a></li>
+  <li role="presentation" <% if params[:controller]=="lunch" %>class="active"<%end%>><a href="/lunch">午餐菜单管理</a></li>
+  <li role="presentation" <% if params[:controller]=="dinner" %>class="active"<%end%>><a href="/dinner">晚餐菜单管理</a></li>
+  <li role="presentation" <% if params[:controller]=="address" %>class="active"<%end%>><a href="/address">送餐地址管理</a></li>
+</ul>
+
