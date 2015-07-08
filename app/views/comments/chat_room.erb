@@ -1,0 +1,24 @@
+<%= javascript_include_tag "comments" %>
+<div class="row" style="height: 80%;overflow: auto"  id="dialog" >
+  <div class="col-md-12"  style="height: 100%; ">
+    <div class="panel panel-default row" id="comments" >
+      <div class="panel-body">
+        <ul class="media-list">
+          <%= render @comments %>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class=" row">
+  <div class="navbar " role="navigation"  id="comment_box" style=" width: 100%;padding: 0px; margin: 0px;">
+    <%= form_for @comment, remote: true do |f| %>
+    <div class="form-group">
+      <%= f.text_field :body, rows: 1, style: "width:80%;padding:5px;", required: true, maxlength: 2000 %><%= f.submit 'Post',style: "width:20%;float:right;", class: 'btn btn-primary btn-sm' %>
+          </div>
+      <% end %>
+      </div>
+
+</div>
+

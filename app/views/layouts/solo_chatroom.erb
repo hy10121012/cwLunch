@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>MiniChat</title>
+  <%= stylesheet_link_tag 'application_chat', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="container" class="container">
+  <%= yield %>
+</div>
+<script>
+    $(document).ready(function(){
+        var minus = $("#container").height()-$("#comment_box").height();
+        $("#dialog").css("height",minus+"px")
+    })
+</script>
+
+</body>
+</html>

@@ -1,54 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" hash="2247443169">
-    <data-source source="LOCAL" name="Rails cwLunch: development" product="MySQL" version="5.5.24" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )" uuid="69ccf248-6bd9-4290-a7ff-9229f8c051fe">
-      <extra-name-characters>#@</extra-name-characters>
-      <identifier-quote-string>`</identifier-quote-string>
+    <data-source source="LOCAL" name="Rails cwLunch: development" uuid="69ccf248-6bd9-4290-a7ff-9229f8c051fe">
+      <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1:3306/cw_lunch</jdbc-url>
-      <user-name>root</user-name>
-      <user-password>df9bdf9adf9bdf98df9bdf9adf9bdf98</user-password>
-      <libraries>
-        <library>
-          <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/mysql-connector-license.txt</url>
-        </library>
-        <library>
-          <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/mysql-connector-java-5.1.31-bin.jar</url>
-        </library>
-      </libraries>
+      <libraries />
     </data-source>
-    <data-source source="LOCAL" name="Rails cwLunch: production" product="MySQL" version="5.5.24" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )" uuid="b7660e04-1b4c-4a69-8213-4d066a696dc3">
-      <extra-name-characters>#@</extra-name-characters>
-      <identifier-quote-string>`</identifier-quote-string>
+    <data-source source="LOCAL" name="Rails cwLunch: production" uuid="b7660e04-1b4c-4a69-8213-4d066a696dc3">
+      <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1:3306/cw_lunch</jdbc-url>
-      <user-name>root</user-name>
-      <user-password>df9bdf9adf9bdf98df9bdf9adf9bdf98</user-password>
-      <libraries>
-        <library>
-          <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/mysql-connector-license.txt</url>
-        </library>
-        <library>
-          <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/mysql-connector-java-5.1.31-bin.jar</url>
-        </library>
-      </libraries>
+      <libraries />
     </data-source>
-    <data-source source="LOCAL" name="Rails cwLunch: test" product="MySQL" version="5.5.24" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )" uuid="d8b288bd-acb3-4098-894b-70d8da0963b4">
-      <extra-name-characters>#@</extra-name-characters>
-      <identifier-quote-string>`</identifier-quote-string>
+    <data-source source="LOCAL" name="Rails cwLunch: test" uuid="d8b288bd-acb3-4098-894b-70d8da0963b4">
+      <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1:3306/cw_lunch</jdbc-url>
-      <user-name>root</user-name>
-      <user-password>df9bdf9adf9bdf98df9bdf9adf9bdf98</user-password>
-      <libraries>
-        <library>
-          <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/mysql-connector-license.txt</url>
-        </library>
-        <library>
-          <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/mysql-connector-java-5.1.31-bin.jar</url>
-        </library>
-      </libraries>
+      <libraries />
     </data-source>
   </component>
 </project>
-

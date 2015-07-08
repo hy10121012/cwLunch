@@ -39,7 +39,7 @@ CwLunch::Application.routes.draw do
   #   resources :products
 
   # Example resource route with options:
-  #   resources :products do
+  #   resources :products do‰
   #     member do
   #       get 'short'
   #       post 'toggle'
@@ -90,8 +90,12 @@ CwLunch::Application.routes.draw do
   get 'order/lunch'=>'order#lunch'
   get 'order/dinner'=>'order#dinner'
   get 'order/history'=>'index#order_history'
+  get 'chatroom'=>'comments#chat_room'
+  get 'chatroom_solo'=>'comments#chat_room_solo'
+  get 'chatroom_solo/:id'=>'comments#register'
 
   resources :items
   resources :address
+  resources :comments
 
 end

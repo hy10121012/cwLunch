@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150525092403) do
+ActiveRecord::Schema.define(version: 20150707212756) do
+
+  create_table "comments", force: true do |t|
+    t.string   "body"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "items", force: true do |t|
     t.string   "name_cn"
@@ -20,6 +29,24 @@ ActiveRecord::Schema.define(version: 20150525092403) do
     t.float    "price_a"
     t.float    "price_b"
     t.string   "img_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", force: true do |t|
+    t.integer  "item_id"
+    t.integer  "user_id"
+    t.datetime "orderDateTime"
+    t.integer  "amount"
+    t.string   "location"
+    t.integer  "type"
+    t.integer  "period"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
