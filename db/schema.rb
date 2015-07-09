@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20150707212756) do
   create_table "orders", force: true do |t|
     t.integer  "item_id"
     t.integer  "user_id"
-    t.datetime "orderDateTime"
+    t.datetime "order_date_time"
     t.integer  "amount"
     t.string   "location"
     t.integer  "type"

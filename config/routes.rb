@@ -97,5 +97,6 @@ CwLunch::Application.routes.draw do
   resources :items
   resources :address
   resources :comments
+  resources :order
 
 end
