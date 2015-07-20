@@ -4,7 +4,7 @@
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <div class="navbar-text navbar-left">
-          <button type="submit" class="btn btn-default">返回</button>
+          <button type="submit" onclick="javascript:window.history.back(); " class="btn btn-default">返回</button>
         </div>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -15,50 +15,60 @@
 
 
 <div class="row">
+  <%= form_for @item, url: {action: "update"}, :html => {:class => 'form-horizontal'} do |order_form| %>
+      <div class="form-group">
+        <label for="name_cn" class="col-sm-2 control-label">中文菜名</label>
+
+        <div class="col-sm-10">
+          <%= order_form.text_field :name_cn, :class => "form-control", :placeholder => "中文菜名" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name_cn" class="col-sm-2 control-label">英文菜名</label>
+
+        <div class="col-sm-10">
+          <%= order_form.text_field :name_en, :class => "form-control", :placeholder => "英文菜名" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name_cn" class="col-sm-2 control-label">菜单种类</label>
+
+        <div class="col-sm-10">
+          <%= order_form.select :item_type, {"午餐" => "1", "晚餐" => "2"}, {:prompt => false}, {:class => 'form-control', :required => true} %>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name_cn" class="col-sm-2 control-label">套餐A价格</label>
+
+        <div class="col-sm-10">
+          <%= order_form.text_field :price_a, :class => "form-control", :placeholder => "套餐A价格" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name_cn" class="col-sm-2 control-label">套餐B价格</label>
+
+        <div class="col-sm-10">
+          <%= order_form.text_field :price_b, :class => "form-control", :placeholder => "套餐B价格" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name_cn" class="col-sm-2 control-label">上传图片</label>
+
+        <div class="col-sm-10">
+          <%= order_form.text_field :img, :class => "form-control" %>
+          <input type="file" class="form-control" id="img_url" placeholder="套餐A价格">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-primary">保存</button>
+        </div>
+      </div>
+  <% end %>
+
+
+
   <form class="form-horizontal">
-    <div class="form-group">
-      <label for="name_cn" class="col-sm-2 control-label">中文菜名</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="name_cn" placeholder="中文菜名">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="name_cn" class="col-sm-2 control-label">英文菜名</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="name_en" placeholder="英文菜名">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="name_cn" class="col-sm-2 control-label">菜单种类</label>
-      <div class="col-sm-10">
-        <select class="form-control" id="type">
-          <option>午餐</option>
-          <option>晚餐</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="name_cn" class="col-sm-2 control-label">套餐A价格</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="pirce_a" placeholder="套餐A价格">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="name_cn" class="col-sm-2 control-label">套餐B价格</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="pirce_a" placeholder="套餐B价格">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="name_cn" class="col-sm-2 control-label">上传图片</label>
-      <div class="col-sm-10">
-        <input type="file" class="form-control" id="img_url" placeholder="套餐A价格">
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-primary">保存</button>
-      </div>
-    </div>
+
   </form>
 </div>

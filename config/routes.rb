@@ -3,11 +3,11 @@ CwLunch::Application.routes.draw do
   get "order/dinner"
   get "order/history"
   get "order/number_search"
-  get "address/index"
-  get "address/create"
-  get "address/new"
-  get "address/edit"
-  get "address/show"
+  get "locations/index"
+  get "locations/create"
+  get "locations/new"
+  get "locations/edit"
+  get "locations/show"
   get "items/new"
   get "items/edit"
   get "items/show"
@@ -95,7 +95,7 @@ CwLunch::Application.routes.draw do
   get 'chatroom_solo/:id'=>'comments#register'
 
   resources :items
-  resources :address
+  resources :locations
   resources :comments
   resources :order
 

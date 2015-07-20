@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707212756) do
+ActiveRecord::Schema.define(version: 20150719232453) do
 
   create_table "comments", force: true do |t|
     t.string   "body"
@@ -25,10 +25,20 @@ ActiveRecord::Schema.define(version: 20150707212756) do
   create_table "items", force: true do |t|
     t.string   "name_cn"
     t.string   "name_en"
-    t.integer  "type"
+    t.integer  "item_type"
     t.float    "price_a"
     t.float    "price_b"
-    t.string   "img_url"
+    t.integer  "is_live"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "img_file_name"
+    t.string   "img_content_type"
+    t.integer  "img_file_size"
+    t.datetime "img_updated_at"
+  end
+
+  create_table "locations", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -36,17 +46,25 @@ ActiveRecord::Schema.define(version: 20150707212756) do
   create_table "orders", force: true do |t|
     t.integer  "item_id"
     t.integer  "user_id"
-    t.datetime "order_date_time"
+    t.integer  "order_date_time"
     t.integer  "amount"
-    t.string   "location"
-    t.integer  "type"
+    t.integer  "location_id"
+    t.integer  "order_type"
     t.integer  "period"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "system_properties", force: true do |t|
+    t.string   "name"
+    t.string   "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
     t.string   "name"
+    t.string   "number",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

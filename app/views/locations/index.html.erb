@@ -4,7 +4,7 @@
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <div class="navbar-form navbar-left">
-          <a href="/items/new" class="btn btn-default">新增菜品</a>
+          <a href="/locations/new" class="btn btn-default">新增地址</a>
         </div>
       </div>
 
@@ -15,24 +15,17 @@
   </nav>
 </nav>
 
+
 <div class="row">
   <table class="table table-hover table-striped">
     <tr>
-      <th>中文菜名</th>
-      <th>英文菜名</th>
-      <th>价格A</th>
-      <th>价格B</th>
-      <th>今日菜单</th>
+      <th>地址</th>
       <th>修改</th>
     </tr>
-    <% for item in @items %>
+    <% for address in @addresses%>
         <tr>
-          <td><%=item.name_cn%></td>
-          <td><%=item.name_en%></td>
-          <td><%=item.price_a%></td>
-          <td><%=item.price_b%></td>
-          <td><input <%if item.is_live==1%>checked='checked'<%end%> type="checkbox"></td>
-          <td><a class="btn btn-primary" href="/items/<%=item.id%>/edit">修改</a></td>
+          <td><%=address.name%></td>
+          <td><a class="btn btn-primary" href="/locations/<%=address.id%>/edit">修改</a></td>
         </tr>
     <%end%>
   </table>

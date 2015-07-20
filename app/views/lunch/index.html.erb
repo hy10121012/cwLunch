@@ -4,7 +4,7 @@
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header navbar-left">
         <div class="navbar-text">
-          <a href="/items/1/edit" class="btn btn-default">新增菜品</a>
+          <a href="/items/new" class="btn btn-default">新增菜品</a>
         </div>
       </div>
       <div class="navbar-header navbar-right">
@@ -45,69 +45,15 @@
       <th>今日菜单</th>
       <th>修改</th>
     </tr>
-    <tr>
-      <td>红烧豆腐</td>
-      <td>Hong shao Tofu</td>
-      <td>6</td>
-      <td>6.5</td>
-      <td><input checked='checked' type="checkbox"></td>
-      <td><a class="btn btn-primary" href="/items/1/edit">修改</a></td>
-    </tr>
-    <tr>
-      <td>农家小炒</td>
-      <td>Nong jia xiaochao</td>
-      <td>6</td>
-      <td>6.5</td>
-      <td><input checked='checked' type="checkbox"></td>
-      <td><a class="btn btn-primary" href="/items/1/edit">修改</a></td>
-    </tr>
-    <tr>
-      <td>白辣椒炒牛肉</td>
-      <td>White paper fries beef</td>
-      <td>6</td>
-      <td>6.5</td>
-      <td><input type="checkbox"></td>
-      <td><a class="btn btn-primary" href="#/items/1/edit">修改</a></td>
-    </tr>
-    <tr>
-      <td>炒四季豆</td>
-      <td>Fry seasonal bean</td>
-      <td>6</td>
-      <td>6.5</td>
-      <td><input checked='checked' type="checkbox"></td>
-      <td><a class="btn btn-primary" href="/items/1/edit">修改</a></td>
-    </tr>
-    <tr>
-      <td>家常豆腐鱼</td>
-      <td>Fish and tofu</td>
-      <td>6</td>
-      <td>6.5</td>
-      <td><input type="checkbox"></td>
-      <td><a class="btn btn-primary" href="/items/1/edit">修改</a></td>
-    </tr>
-    <tr>
-      <td>粉丝肥牛</td>
-      <td>Fen si beef</td>
-      <td>6</td>
-      <td>6.5</td>
-      <td><input type="checkbox"></td>
-      <td><a class="btn btn-primary" href="/items/1/edit">修改</a></td>
-    </tr>
-    <tr>
-      <td>香菇萝卜</td>
-      <td>Mashroom and carrot</td>
-      <td>6</td>
-      <td>6.5</td>
-      <td><input checked='checked' type="checkbox"></td>
-      <td><a class="btn btn-primary" href="/items/1/edit">修改</a></td>
-    </tr>
-    <tr>
-      <td>红烧茄子豆角</td>
-      <td>Hong shao qie zi</td>
-      <td>6</td>
-      <td>6.5</td>
-      <td><input checked='checked' type="checkbox"></td>
-      <td><a class="btn btn-primary" href="/items/1/edit">修改</a></td>
-    </tr>
+    <% for item in @items %>
+        <tr>
+          <td><%=item.name_cn%></td>
+          <td><%=item.name_en%></td>
+          <td><%=item.price_a%></td>
+          <td><%=item.price_b%></td>
+          <td><input <%if item.is_live==1%>checked='checked'<%end%> type="checkbox"></td>
+          <td><a class="btn btn-primary" href="/items/<%=item.id%>/edit">修改</a></td>
+        </tr>
+    <%end%>
   </table>
 </div>

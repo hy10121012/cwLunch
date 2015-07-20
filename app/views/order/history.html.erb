@@ -25,109 +25,37 @@
   </nav>
 </nav>
 
-<div class="row" style="margin-bottom: 10px;">
-  <ul class="nav nav-pills">
-    <li role="presentation"  class="active"><a href="#">午餐</a></li>
-    <li role="presentation" ><a href="#">晚餐</a></li>
-  </ul>
-</div>
-<div class="row">
-  <div class="panel panel-primary">
-    <div style="cursor: pointer" data-toggle="collapse" href="#date1" aria-expanded="false" aria-controls="date1" class="panel-heading">2015/05/23</div>
-  </div>
-  <div class="collapse well" id="date1" style="padding: 5px;">
-    <div class="panel panel-default">
-      <div class="panel-heading">J.P Morgan</div>
-      <div class="list-group">
-        <a data-toggle="collapse" href="#detail1" aria-expanded="false" aria-controls="detail1" class="list-group-item">红烧豆腐<span class="badge">7</span></a>
-        <div class="collapse well" id="detail1" style="padding: 5px;">
-          <ul class="list-group">
-            <li href="#" class="list-group-item text-primary"><label>07134422332</label><span class="badge">预定时间: 2015-05-21 11:00:12</span>
-            </li>
-            <li href="#" class="list-group-item text-primary"><label>07801749626</label><span class="badge">预定时间: 2015-05-21 10:31:12</span>
-            </li>
-            <li href="#" class="list-group-item text-primary"><label>07551122332</label><span class="badge">预定时间: 2015-05-21 10:30:12</span>
-            </li>
-            <li href="#" class="list-group-item text-primary"><label>07006211212</label><span class="badge">预定时间: 2015-05-21 09:30:12</span>
-            </li>
-            <li href="#" class="list-group-item text-primary"><label>07134422332</label><span class="badge">预定时间: 2015-05-20 23:45:12</span>
-            </li>
-            <li href="#" class="list-group-item text-primary"><label>07801749626</label><span class="badge">预定时间: 2015-05-20 22:30:12</span>
-            </li>
-            <li href="#" class="list-group-item text-primary"><label>07606211212</label><span class="badge">预定时间: 2015-05-20 10:30:12</span>
-            </li>
-          </ul>
-        </div>
-        <a href="#" class="list-group-item">烧鸭饭<span class="badge">6</span></a>
-        <a href="#" class="list-group-item">烧鸭饭（无饭）<span class="badge">1</span></a>
-        <a href="#" class="list-group-item">农家小炒<span class="badge">5</span></a>
-        <a href="#" class="list-group-item">粉丝肥牛<span class="badge">1</span></a>
-        <a href="#" class="list-group-item">酸豆角鸡杂<span class="badge">2</span></a>
-        <a href="#" class="list-group-item">酸豆角鸡杂(无饭)<span class="badge">2</span></a>
+<% @orders.each_with_index do |date_order, di| %>
+    <div class="row">
+      <div class="panel panel-primary">
+        <div style="cursor: pointer" data-toggle="collapse" href="#date<%= di %>" aria-expanded="false" aria-controls="date<%= di %>" class="panel-heading"><%= date_order[0] %></div>
+      </div>
+      <div class="collapse well" id="date<%= di %>" style="padding: 5px;">
+        <% date_order[1].each_with_index do |location_order, li| %>
+            <div class="panel panel-default">
+              <div class="panel-heading"><%= location_order[0] %></div>
+              <div class="list-group">
+                <% location_order[1].each_with_index do |item_order, ii| %>
+                    <a data-toggle="collapse" href="#detail<%= di %><%= li %><%= ii %>" aria-expanded="false" aria-controls="detail<%= di %><%= li %><%= ii %>" class="list-group-item"><%= item_order[0] %>
+                      <span class="badge"><%=count_total(item_order[1])%></span></a>
+
+                    <div class="collapse well" id="detail<%= di %><%= li %><%= ii %>" style="padding: 5px;">
+                      <ul class="list-group">
+                        <% item_order[1].each_with_index do |order, o| %>
+                            <li href="#" class="list-group-item text-primary">
+                              <label><%= order.number %></label><span class="badge">预定时间: <%= order.created_at %></span><span class="badge">x <%=order.amount%></span>
+                            </li>
+                        <% end %>
+                      </ul>
+                    </div>
+                <% end %>
+              </div>
+            </div>
+        <% end %>
       </div>
     </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">DLR Station</div>
-      <div class="list-group">
-        <a href="#" class="list-group-item">红烧豆腐<span class="badge">14</span></a>
-        <a href="#" class="list-group-item">烧鸭饭<span class="badge">6</span></a>
-        <a href="#" class="list-group-item">烧鸭饭（无饭）<span class="badge">1</span></a>
-        <a href="#" class="list-group-item">农家小炒<span class="badge">5</span></a>
-        <a href="#" class="list-group-item">粉丝肥牛<span class="badge">1</span></a>
-        <a href="#" class="list-group-item">酸豆角鸡杂<span class="badge">2</span></a>
-        <a href="#" class="list-group-item">酸豆角鸡杂(无饭)<span class="badge">2</span></a>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">SC 10</div>
-      <ul class="list-group">
-        <a href="#" class="list-group-item">红烧豆腐<span class="badge">1</span></a>
-        <a href="#" class="list-group-item">烧鸭饭（无饭）<span class="badge">1</span></a>
-        <a href="#" class="list-group-item">农家小炒<span class="badge">8</span></a>
-        <a href="#" class="list-group-item">粉丝肥牛<span class="badge">3</span></a>
-        <a href="#" class="list-group-item">酸豆角鸡杂<span class="badge">8</span></a>
-        <a href="#" class="list-group-item">酸豆角鸡杂(无饭)<span class="badge">1</span></a>
-      </ul>
-    </div>
-  </div>
-  <div class="panel panel-primary">
-    <div style="cursor: pointer" data-toggle="collapse" href="#date2" aria-expanded="false" aria-controls="date2" class="panel-heading">2015/05/22</div>
-  </div>
-  <div class="collapse well" id="date2" style="padding: 5px;">
-    <div class="panel panel-default">
-      <div class="panel-heading">J.P Morgan</div>
-      <div class="list-group">
-        <a href="#" class="list-group-item">红烧豆腐<span class="badge">7</span></a>
-        <a href="#" class="list-group-item">烧鸭饭<span class="badge">6</span></a>
-        <a href="#" class="list-group-item">烧鸭饭（无饭）<span class="badge">1</span></a>
-        <a href="#" class="list-group-item">农家小炒<span class="badge">5</span></a>
-        <a href="#" class="list-group-item">粉丝肥牛<span class="badge">1</span></a>
-        <a href="#" class="list-group-item">酸豆角鸡杂<span class="badge">2</span></a>
-        <a href="#" class="list-group-item">酸豆角鸡杂(无饭)<span class="badge">2</span></a>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">DLR Station</div>
-      <div class="list-group">
-        <a href="#" class="list-group-item">红烧豆腐<span class="badge">14</span></a>
-        <a href="#" class="list-group-item">烧鸭饭<span class="badge">6</span></a>
-        <a href="#" class="list-group-item">烧鸭饭（无饭）<span class="badge">1</span></a>
-        <a href="#" class="list-group-item">农家小炒<span class="badge">5</span></a>
-        <a href="#" class="list-group-item">粉丝肥牛<span class="badge">1</span></a>
-        <a href="#" class="list-group-item">酸豆角鸡杂<span class="badge">2</span></a>
-        <a href="#" class="list-group-item">酸豆角鸡杂(无饭)<span class="badge">2</span></a>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">SC 10</div>
-      <ul class="list-group">
-        <a href="#" class="list-group-item">红烧豆腐<span class="badge">1</span></a>
-        <a href="#" class="list-group-item">烧鸭饭（无饭）<span class="badge">1</span></a>
-        <a href="#" class="list-group-item">农家小炒<span class="badge">8</span></a>
-        <a href="#" class="list-group-item">粉丝肥牛<span class="badge">3</span></a>
-        <a href="#" class="list-group-item">酸豆角鸡杂<span class="badge">8</span></a>
-        <a href="#" class="list-group-item">酸豆角鸡杂(无饭)<span class="badge">1</span></a>
-      </ul>
-    </div>
-  </div>
-</div>
+<% end %>
+
+
+
+

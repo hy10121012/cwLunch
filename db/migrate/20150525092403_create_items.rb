@@ -3,11 +3,12 @@ class CreateItems < ActiveRecord::Migration
     create_table :items do |t|
       t.string :name_cn
       t.string :name_en
-      t.integer :type
+      t.integer :period
+      t.boolean :item_type
       t.float :price_a
       t.float :price_b
-      t.string :img_url
-
+      t.integer :period
+      t.integer :is_live
       t.timestamps
     end
   end

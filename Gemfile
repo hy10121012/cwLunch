@@ -30,6 +30,10 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'thin'
 
+gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
+gem 'aws-sdk'
+gem 'jquery-fileupload-rails'
+
 gem 'jquery-turbolinks'
 
 
