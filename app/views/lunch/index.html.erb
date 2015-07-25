@@ -19,12 +19,12 @@
         </div>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <form class="navbar-form navbar-left" role="plan_set" style="margin-top: 15px;padding-left:0px">
+        <%=form_for @setB_menu,:url=>{:action=>"update_setB_menu"}, :html=>{:class=>"navbar-form navbar-left", :role=>"plan_set", :style=>"margin-top: 15px;padding-left:0px"} do |setB_menu_form|%>
           <div class="form-group">
-            修改B套餐配菜信息 <input style="width: 300px" type="text" class="form-control" placeholder="请输入B套餐配菜信息" value="拍黄瓜+手撕包菜">
+            修改B套餐配菜信息 <%=setB_menu_form.text_field :value, :class => "form-control", :placeholder => "请输入B套餐配菜信息",:style=>"width: 300px"%>
           </div>
-          <button type="submit" class="btn btn-default">推送</button>
-        </form>
+          <button type="submit" class="btn btn-default">更新</button>
+        <% end %>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->

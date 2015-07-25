@@ -1,4 +1,11 @@
 CwLunch::Application.routes.draw do
+  get "web_service/get_lunch"
+  get "web_service/get_dinner"
+  get "web_service/create_order"
+  get "web_service/cancel_order"
+  get "web_service/update_order"
+  get "web_service/register"
+  get "web_service/login"
   get "order/lunch"
   get "order/dinner"
   get "order/history"
@@ -93,6 +100,14 @@ CwLunch::Application.routes.draw do
   get 'chatroom'=>'comments#chat_room'
   get 'chatroom_solo'=>'comments#chat_room_solo'
   get 'chatroom_solo/:id'=>'comments#register'
+  patch 'lunch/update_setB_menu'=>'lunch#update_setB_menu'
+  get 'ajax/lunch'=>'web_service#get_lunch'
+  get 'ajax/dinner'=>'web_service#get_dinner'
+  post 'ajax/create_order'=>'web_service#create_order'
+  post 'ajax/cancel_order'=>'web_service#cancel_order'
+  post 'ajax/update_order'=>'web_service#update_order'
+  get 'ajax/get_history_order/:user_id/:offset'=>'web_service#get_history_order'
+
 
   resources :items
   resources :locations

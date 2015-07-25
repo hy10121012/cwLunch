@@ -12,6 +12,24 @@ class SystemProperty < ActiveRecord::Base
     item.save
   end
 
+  def self.find_deliver_time()
+    r = self.where("name"=>"lunch_time")
+    if(r)
+      r.first
+    else
+      ""
+    end
+  end
+
+  def self.find_setB_menu()
+    r = self.where("name"=>"b_set_menu")
+    if(r)
+      r.first
+    else
+      ""
+    end
+  end
+
 
 
 end
