@@ -3,7 +3,7 @@ class CreateOrders < ActiveRecord::Migration
     create_table :orders do |t|
       t.integer :item_id
       t.integer :user_id
-      t.timestamp :order_date_time
+      t.integer :order_date_time
       t.integer :amount
       t.integer :location_id
       t.integer :order_type
